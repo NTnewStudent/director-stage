@@ -1,0 +1,375 @@
+/**
+ * hjw AIGC Comic Tool — Design Tokens
+ * 视觉风格：炭黑 + 翠绿（参考 pc-ref-assest/figma-designs/hjw-project-visual-role.svg）
+ *
+ * Resolution:
+ * - `:root` — dark palette（默认，炭黑画布）
+ * - `@media (prefers-color-scheme: light)` + `:root:not(.dark)` — 系统浅色时自动切换
+ * - `html.light` — 强制浅色主题
+ */
+
+:root {
+  /* ── Borders ──
+   * 奢华黑下表面更深，描边略提亮做"发丝线"分层（premium hairline） */
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-border-standard: rgba(255, 255, 255, 0.1);
+  --color-border-primary: #2a2a2a;
+  --color-border-secondary: #353535;
+  --color-border-deep: #050505;
+
+  /* ── Forms ── */
+  --color-input-border: rgba(255, 255, 255, 0.08);
+
+  /* ── Primary CTA ── */
+  --color-btn-primary-bg: #07af49;
+  --color-btn-primary-text: #ffffff;
+
+  /* ── DARK — Background surfaces ──
+   * 奢华黑深度模型（由深到浅）：整体下压一档，近黑色阶 + 发丝描边分层，
+   * 替代旧中灰色阶（#252525/#333/#4a4a4a 显灰蒙）：
+   * #050505 / #0b0b0e → #0f0f0f → #141414 → #1a1a1a → #262626 → #303030
+   */
+  --color-bg-base: #0f0f0f;        /* 主画布 */
+  --color-bg-topbar: #0b0b0e;      /* 顶栏（带蓝黑色调） */
+  --color-bg-rail: #141414;        /* 左侧导航轨道 */
+  --color-bg-panel: #1a1a1a;       /* 侧边面板、列表面板 */
+  --color-canvas-surface: #1a1a1a; /* 画布节点 / 工具栏面板（暗色与 bg-panel 一致）*/
+  --color-bg-surface: #141414;     /* 通用 surface（与 rail 同级） */
+  --color-bg-elevated: #1c1c1c;    /* 面板级 elevated */
+  --color-bg-card: #1a1a1a;        /* 卡片默认背景 */
+  --color-bg-card-active: #262626; /* 卡片选中/激活背景 */
+  --color-bg-highlight: #262626;   /* 高亮/悬浮背景 */
+  --color-bg-hover: #222222;       /* 悬浮态背景 */
+  --color-bg-mid: #171717;         /* 中间层背景 */
+  --color-bg-input: #0c0c0c;       /* 输入框（最深，凹陷感） */
+  --color-bg-action-btn: #303030;  /* 普通操作按钮背景 */
+  --color-bg-view-strip: #191919;  /* 视图切换条背景 */
+  --color-bg-overlay-bar: #181818; /* 底部浮动操作栏背景 */
+
+  /* ── Brand & Accent ── */
+  --color-brand: #00c853;          /* 品牌翠绿（激活/完成/强调） */
+  --color-brand-cta: #07af49;      /* CTA 按钮绿 */
+  --color-brand-step: #05b84c;     /* 步骤指示器激活绿 */
+  --color-brand-hover: #00e65c;    /* 品牌绿悬浮态（更亮） */
+  --color-brand-pressed: #00a844;  /* 品牌绿按下态（更深） */
+
+  /* ── Brand subtle backgrounds ── */
+  --color-bg-brand-subtle: #12351d;   /* 品牌绿极淡背景（导航激活项） */
+  --color-bg-step-active: #072b16;    /* 步骤激活 pill 背景 */
+
+  /* ── Text ── */
+  --color-text-base: #e9e9e9;      /* 主文字 */
+  --color-text-secondary: #9b9b9b; /* 次要文字 */
+  --color-text-muted: #737373;     /* 暗淡文字（字数统计、禁用） */
+  --color-text-silver: #cfcfcf;    /* 银灰文字（图标、次级操作） */
+  --color-text-nearWhite: #e9e9e9; /* 近白（与 base 同，保持兼容） */
+  --color-text-white: #ffffff;     /* 纯白（仅 CTA 按钮内文字） */
+
+  /* ── Semantic ── */
+  --color-negative: #e22134;
+  --color-warning: #ff9c26;
+  --color-warning-text: #ffad39;
+  --color-info: #539df5;
+  --color-success: #00c853;
+  /* ── REQ-170 协同 presence 色（只引用既有 token，组件禁止写 hex）── */
+  --color-presence-1: var(--color-brand);
+  --color-presence-2: var(--color-info);
+  --color-presence-3: var(--color-warning);
+  --color-presence-4: var(--color-negative);
+  --color-presence-5: var(--color-success);
+  --color-presence-6: var(--color-brand-hover);
+  --color-presence-7: var(--color-warning-text);
+  --color-presence-8: var(--color-text-silver);
+
+  /* ── Status subtle ── */
+  --color-success-subtle-bg: #1d4a2b;
+  --color-success-subtle-border: #1f8c45;
+  --color-warning-subtle-bg: #3d2e00;
+  --color-warning-subtle-border: #7a5c00;
+  --color-negative-subtle-bg: #3d1010;
+  --color-negative-subtle-border: #7a2020;
+
+  /* ── Overlay ── */
+  --color-overlay-scrim: rgba(0, 0, 0, 0.85);
+
+  /* ── Shadows ── */
+  --shadow-subtle: rgba(0, 0, 0, 0.3) 0px 1.2px 0px 0px;
+  --shadow-card: rgba(0, 0, 0, 0.3) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1.2px 0px 0px;
+  --shadow-medium: rgba(0, 0, 0, 0.4) 0px 2px 4px;
+  --shadow-elevated: rgba(0, 0, 0, 0.5) 0px 4px 12px, rgba(0, 0, 0, 0.3) 0px 2px 4px;
+  --shadow-heavy: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-inset: rgba(0, 0, 0, 0.2) 0px 0px 12px 0px inset;
+  --shadow-input-inset: inset 0 0 0 1px var(--color-input-border);
+
+  /* ── Border Radius ── */
+  --radius-micro: 2px;
+  --radius-sm: 4px;
+  --radius-md: 7px;   /* hjw 主要圆角（按钮、卡片、输入框） */
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  /* REQ-089：画布语言大圆角（卡片 16 / hero 容器 24），rounded-2xl/3xl 不再压到 12px */
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-pill: 9999px;
+
+  /* ── 节点选中态（钻石黑风格）── */
+  --color-node-selected: #e8e8f0;                         /* 暗色：冰银描边 */
+  --color-node-selected-glow: rgba(232, 232, 240, 0.35);  /* 暗色：外圈光晕 */
+  --color-node-selected-ring: rgba(232, 232, 240, 0.12);  /* 暗色：外圈扩散环 */
+
+  /* ── REQ-089 画布柔浮影（dark） ── */
+  --shadow-float: 0 10px 35px rgba(0, 0, 0, 0.45);
+  --shadow-pop: 0 18px 50px rgba(0, 0, 0, 0.55);
+
+  /* ── Scrollbar ── */
+  --scrollbar-track: var(--color-bg-surface);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.12);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.2);
+  --scrollbar-width: 8px;
+
+  /* ── Typography ── */
+  --font-sans:
+    'Inter', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP',
+    'PingFang SC', 'Microsoft YaHei', 'Arial', -apple-system, system-ui,
+    'Segoe UI', sans-serif;
+  --font-mono: 'Berkeley Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --font-display-size: 4.5rem;
+  --font-display-leading: 1;
+  --font-display-tracking: -0.099rem;
+
+  --font-section-heading-size: 3rem;
+  --font-section-heading-leading: 1;
+  --font-section-heading-tracking: -0.066rem;
+
+  --font-heading-1-size: 2rem;
+  --font-heading-1-leading: 1.13;
+  --font-heading-1-tracking: -0.044rem;
+
+  --font-subheading-lg-size: 2rem;
+  --font-subheading-size: 1.5rem;
+}
+
+[data-director-stage-theme="dark"] {
+  color-scheme: dark;
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-border-standard: rgba(255, 255, 255, 0.1);
+  --color-border-primary: #2a2a2a;
+  --color-border-secondary: #353535;
+  --color-border-deep: #050505;
+  --color-input-border: rgba(255, 255, 255, 0.08);
+  --color-bg-base: #0f0f0f;
+  --color-bg-topbar: #0b0b0e;
+  --color-bg-rail: #141414;
+  --color-bg-panel: #1a1a1a;
+  --color-canvas-surface: #1a1a1a;
+  --color-bg-surface: #141414;
+  --color-bg-elevated: #1c1c1c;
+  --color-bg-card: #1a1a1a;
+  --color-bg-card-active: #262626;
+  --color-bg-highlight: #262626;
+  --color-bg-hover: #222222;
+  --color-bg-mid: #171717;
+  --color-bg-input: #0c0c0c;
+  --color-bg-action-btn: #303030;
+  --color-bg-view-strip: #191919;
+  --color-bg-overlay-bar: #181818;
+  --color-brand: #00c853;
+  --color-brand-hover: #00e65c;
+  --color-brand-pressed: #00a844;
+  --color-bg-brand-subtle: #12351d;
+  --color-bg-step-active: #072b16;
+  --color-text-base: #e9e9e9;
+  --color-text-secondary: #9b9b9b;
+  --color-text-muted: #737373;
+  --color-text-silver: #cfcfcf;
+  --color-text-nearWhite: #e9e9e9;
+  --color-success: #00c853;
+  --color-success-subtle-bg: #1d4a2b;
+  --color-success-subtle-border: #1f8c45;
+  --color-warning-subtle-bg: #3d2e00;
+  --color-warning-subtle-border: #7a5c00;
+  --color-negative-subtle-bg: #3d1010;
+  --color-negative-subtle-border: #7a2020;
+  --color-overlay-scrim: rgba(0, 0, 0, 0.85);
+  --shadow-subtle: rgba(0, 0, 0, 0.3) 0px 1.2px 0px 0px;
+  --shadow-card: rgba(0, 0, 0, 0.3) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1.2px 0px 0px;
+  --shadow-medium: rgba(0, 0, 0, 0.4) 0px 2px 4px;
+  --shadow-elevated: rgba(0, 0, 0, 0.5) 0px 4px 12px, rgba(0, 0, 0, 0.3) 0px 2px 4px;
+  --shadow-heavy: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-float: 0 10px 35px rgba(0, 0, 0, 0.45);
+  --shadow-pop: 0 18px 50px rgba(0, 0, 0, 0.55);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.12);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.2);
+  --color-node-selected: #e8e8f0;
+  --color-node-selected-glow: rgba(232, 232, 240, 0.35);
+  --color-node-selected-ring: rgba(232, 232, 240, 0.12);
+}
+
+/* ─────────────────────────────────────────────
+   Light theme — system preference
+───────────────────────────────────────────── */
+@media (prefers-color-scheme: light) {
+  :root:not(.dark) {
+    /* 浅色 v4：对齐参考图 — 浅灰画布 + 纯白节点卡片 + 中性灰边框 */
+    --color-border-subtle: #ececec;
+    --color-border-standard: #dcdcdc;
+    --color-border-primary: #d4d4d4;
+    --color-border-secondary: #dedede;
+    --color-border-deep: #b8b8b8;
+
+    --color-input-border: #d0d0d0;
+
+    --color-btn-primary-bg: #07af49;
+    --color-btn-primary-text: #ffffff;
+
+    --color-bg-base: #ebebeb;
+    --color-bg-topbar: #ffffff;
+    --color-bg-rail: #f0f0f0;
+    --color-bg-panel: #f8f8f8;
+    --color-canvas-surface: rgba(252, 251, 249, 0.82); /* 节点/工具栏：暖米白半透明（配合 backdrop-blur 出透亮毛玻璃质感）*/
+    --color-bg-surface: #f0f0f0;
+    --color-bg-elevated: #ffffff;
+    --color-bg-card: #ffffff;
+    --color-bg-card-active: #eaf6ef;
+    --color-bg-highlight: #ebebeb;
+    --color-bg-hover: #f2f2f2;
+    --color-bg-mid: #f0f0f0;
+    --color-bg-input: #f5f5f5;
+    --color-bg-action-btn: #ebebeb;
+    --color-bg-view-strip: #f0f0f0;
+    --color-bg-overlay-bar: #f8f8f8;
+
+    --color-brand: #00a844;
+    --color-brand-cta: #07af49;
+    --color-brand-step: #05b84c;
+    --color-brand-hover: #00c853;
+    --color-brand-pressed: #008f3a;
+
+    --color-bg-brand-subtle: #e8f5ee;
+    --color-bg-step-active: #d4f0e0;
+
+    --color-text-base: #1a1d21;
+    --color-text-secondary: #4a4f57;
+    --color-text-muted: #777d87;
+    --color-text-silver: #585e66;
+    --color-text-nearWhite: #1a1d21;
+    --color-text-white: #ffffff;
+
+    --color-success: #00a844;
+
+    --color-success-subtle-bg: #e8f5ee;
+    --color-success-subtle-border: #27a644;
+    --color-warning-subtle-bg: #fff8e6;
+    --color-warning-subtle-border: #ffa42b;
+    --color-negative-subtle-bg: #fef2f2;
+    --color-negative-subtle-border: #e22134;
+
+    /* 浅色遮罩：避免沿用暗色 0.85 黑造成弹窗背景过重 */
+    --color-overlay-scrim: rgba(15, 18, 22, 0.45);
+
+    --shadow-subtle: 0 1px 2px rgba(17, 24, 39, 0.04);
+    --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 2px 8px rgba(17, 24, 39, 0.06);
+    --shadow-elevated: 0 4px 12px rgba(17, 24, 39, 0.08), 0 1px 3px rgba(17, 24, 39, 0.05);
+    --shadow-heavy: 0 12px 40px rgba(17, 24, 39, 0.12), 0 4px 12px rgba(17, 24, 39, 0.08);
+    --shadow-input-inset: inset 0 0 0 1px var(--color-input-border);
+
+    /* REQ-089 画布柔浮影（light，对齐画布工具栏/菜单投影） */
+    --shadow-float: 0 10px 35px rgba(17, 24, 39, 0.06);
+    --shadow-pop: 0 18px 50px rgba(17, 24, 39, 0.14);
+
+    --scrollbar-track: var(--color-bg-surface);
+    --scrollbar-thumb: rgba(17, 24, 39, 0.18);
+    --scrollbar-thumb-hover: rgba(17, 24, 39, 0.28);
+
+    /* ── 节点选中态（钻石黑风格）── */
+    --color-node-selected: #1a1a2e;                         /* 亮色：深炭黑描边 */
+    --color-node-selected-glow: rgba(26, 26, 46, 0.35);    /* 亮色：外圈光晕 */
+    --color-node-selected-ring: rgba(26, 26, 46, 0.12);    /* 亮色：外圈扩散环 */
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Light theme — forced via html.light class
+───────────────────────────────────────────── */
+html.light,
+[data-director-stage-theme="light"] {
+  color-scheme: light;
+  /* 浅色 v4：对齐参考图 — 浅灰画布 + 纯白节点卡片 + 中性灰边框 */
+  --color-border-subtle: #ececec;
+  --color-border-standard: #dcdcdc;
+  --color-border-primary: #d4d4d4;
+  --color-border-secondary: #dedede;
+  --color-border-deep: #b8b8b8;
+
+  --color-input-border: #d0d0d0;
+
+  --color-btn-primary-bg: #07af49;
+  --color-btn-primary-text: #ffffff;
+
+  --color-bg-base: #ebebeb;
+  --color-bg-topbar: #ffffff;
+  --color-bg-rail: #f0f0f0;
+  --color-bg-panel: #f8f8f8;
+  --color-canvas-surface: #ffffff; /* 节点 / 工具栏：纯白，与画布形成对比 */
+  --color-bg-surface: #f0f0f0;
+  --color-bg-elevated: #ffffff;
+  --color-bg-card: #ffffff;
+  --color-bg-card-active: #eaf6ef;
+  --color-bg-highlight: #ebebeb;
+  --color-bg-hover: #f2f2f2;
+  --color-bg-mid: #f0f0f0;
+  --color-bg-input: #f5f5f5;
+  --color-bg-action-btn: #ebebeb;
+  --color-bg-view-strip: #f0f0f0;
+  --color-bg-overlay-bar: #f8f8f8;
+
+  --color-brand: #00a844;
+  --color-brand-cta: #07af49;
+  --color-brand-step: #05b84c;
+  --color-brand-hover: #00c853;
+  --color-brand-pressed: #008f3a;
+
+  --color-bg-brand-subtle: #e8f5ee;
+  --color-bg-step-active: #d4f0e0;
+
+  --color-text-base: #1a1d21;
+  --color-text-secondary: #4a4f57;
+  --color-text-muted: #777d87;
+  --color-text-silver: #585e66;
+  --color-text-nearWhite: #1a1d21;
+  --color-text-white: #ffffff;
+
+  --color-success: #00a844;
+
+  --color-success-subtle-bg: #e8f5ee;
+  --color-success-subtle-border: #27a644;
+  --color-warning-subtle-bg: #fff8e6;
+  --color-warning-subtle-border: #ffa42b;
+  --color-negative-subtle-bg: #fef2f2;
+  --color-negative-subtle-border: #e22134;
+
+  /* 浅色遮罩：避免沿用暗色 0.85 黑造成弹窗背景过重 */
+  --color-overlay-scrim: rgba(15, 18, 22, 0.45);
+
+  --shadow-subtle: 0 1px 2px rgba(17, 24, 39, 0.04);
+  --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 2px 8px rgba(17, 24, 39, 0.06);
+  --shadow-elevated: 0 4px 12px rgba(17, 24, 39, 0.08), 0 1px 3px rgba(17, 24, 39, 0.05);
+  --shadow-heavy: 0 12px 40px rgba(17, 24, 39, 0.12), 0 4px 12px rgba(17, 24, 39, 0.08);
+  --shadow-input-inset: inset 0 0 0 1px var(--color-input-border);
+
+  /* REQ-089 画布柔浮影（light，对齐画布工具栏/菜单投影） */
+  --shadow-float: 0 10px 35px rgba(17, 24, 39, 0.06);
+  --shadow-pop: 0 18px 50px rgba(17, 24, 39, 0.14);
+
+  --scrollbar-track: var(--color-bg-surface);
+  --scrollbar-thumb: rgba(17, 24, 39, 0.18);
+  --scrollbar-thumb-hover: rgba(17, 24, 39, 0.28);
+
+  /* ── 节点选中态（钻石黑风格）── */
+  --color-node-selected: #1a1a2e;                         /* 亮色：深炭黑描边 */
+  --color-node-selected-glow: rgba(26, 26, 46, 0.35);    /* 亮色：外圈光晕 */
+  --color-node-selected-ring: rgba(26, 26, 46, 0.12);    /* 亮色：外圈扩散环 */
+}

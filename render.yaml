@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: director-stage
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /

@@ -1,0 +1,20 @@
+{
+  "name": "director-stage",
+  "private": true,
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @director-stage/playground",
+    "example": "npm run dev -w @director-stage/example",
+    "test": "npm run test -w @director-stage/core",
+    "build": "npm run build -w @director-stage/playground"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
