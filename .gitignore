@@ -5,3 +5,7 @@ dist
 .vite
 coverage
 .vercel
+.env*
+
+# local planning docs
+docs/superpowers/
