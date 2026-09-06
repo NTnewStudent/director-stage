@@ -3,9 +3,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 COPY packages/core/package.json packages/core/package.json
 COPY apps/playground/package.json apps/playground/package.json
-COPY examples/01-react-mount/package.json examples/01-react-mount/package.json
-COPY examples/02-custom-storage/package.json examples/02-custom-storage/package.json
-COPY examples/03-capture-record/package.json examples/03-capture-record/package.json
+COPY examples/embed/package.json examples/embed/package.json
 RUN npm ci
 COPY . .
 RUN npm run build -w @director-stage/playground
