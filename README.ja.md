@@ -24,7 +24,13 @@ Seedance、H3、Kling、Omni などの映像生成向け **3D 監督台**です�
 ## インストール
 
 ```bash
-npm install @director-stage/core react react-dom three @react-three/fiber @react-three/drei
+npm i @director-stage/core
+```
+
+[npm](https://www.npmjs.com/package/@director-stage/core) パッケージです。Peer も一緒に入れてください：
+
+```bash
+npm i react react-dom three @react-three/fiber @react-three/drei
 ```
 
 Peer: `react` 18 または 19、`three` ^0.185、`@react-three/fiber`、`@react-three/drei`。

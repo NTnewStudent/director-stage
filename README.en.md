@@ -24,7 +24,13 @@ Captures and exports omit the grid, gizmos, and labels, so they can feed Seedanc
 ## Install
 
 ```bash
-npm install @director-stage/core react react-dom three @react-three/fiber @react-three/drei
+npm i @director-stage/core
+```
+
+The [npm package](https://www.npmjs.com/package/@director-stage/core). Also install the peers:
+
+```bash
+npm i react react-dom three @react-three/fiber @react-three/drei
 ```
 
 Peers: `react` 18 or 19, `three` ^0.185, `@react-three/fiber`, `@react-three/drei`.
