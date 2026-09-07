@@ -9,7 +9,7 @@ Stage characters, props, and cameras in 3D, then export a clean still or a previ
 - Package: `@director-stage/core`
 - Component: `<DirectorStage />`
 - License: MIT
-- API: [docs/api.md](docs/api.md)
+- API: [English](docs/api.en.md) · [中文](docs/api.md) · [日本語](docs/api.ja.md)
 
 ## What it does
 
@@ -74,7 +74,7 @@ Workbench **Capture / Export**, or `ref.capture()` / `ref.record()`, all fire th
 
 `locale`: `'zh-CN'` (default) `| 'en-US' | 'ja-JP'`. The header switches theme and UI language. Omit `locale` and pass `defaultLocale` if the workbench should keep its own language state.
 
-Full surface: [docs/api.md](docs/api.md).
+Full surface: [docs/api.en.md](docs/api.en.md).
 
 ## Run locally
 

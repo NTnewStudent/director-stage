@@ -2,7 +2,7 @@
 
 A 3D director stage React component for AI video models (Seedance, Kling, Omni, H3 and similar). Stage characters, props, and cameras in 3D, then export a clean still, a camera-motion preview clip, or a camera-language prompt into the generator.
 
-Full docs and playground: [github.com/NTnewStudent/director-stage](https://github.com/NTnewStudent/director-stage) · API reference: [docs/api.md](https://github.com/NTnewStudent/director-stage/blob/main/docs/api.md)
+Full docs and playground: [github.com/NTnewStudent/director-stage](https://github.com/NTnewStudent/director-stage) · API reference: [docs/api.en.md](https://github.com/NTnewStudent/director-stage/blob/main/docs/api.en.md)
 
 ## Install
 

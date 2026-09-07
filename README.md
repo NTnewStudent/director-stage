@@ -9,7 +9,7 @@
 - 包：`@director-stage/core`
 - 组件：`<DirectorStage />`
 - 协议：MIT
-- API：[docs/api.md](docs/api.md)
+- API：[docs/api.md](docs/api.md) · [English](docs/api.en.md) · [日本語](docs/api.ja.md)
 
 ## 能做什么
 

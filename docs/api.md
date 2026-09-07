@@ -1,5 +1,7 @@
 # @director-stage/core API
 
+[中文](api.md) · [English](api.en.md) · [日本語](api.ja.md)
+
 MIT。公开符号以 `packages/core/src/index.ts` 为准。
 
 ## 安装

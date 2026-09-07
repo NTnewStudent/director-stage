@@ -9,7 +9,7 @@ Seedance、H3、Kling、Omni などの映像生成向け **3D 監督台**です�
 - パッケージ: `@director-stage/core`
 - コンポーネント: `<DirectorStage />`
 - ライセンス: MIT
-- API: [docs/api.md](docs/api.md)
+- API: [日本語](docs/api.ja.md) · [中文](docs/api.md) · [English](docs/api.en.md)
 
 ## できること
 
@@ -74,7 +74,7 @@ export function App() {
 
 `locale`: `'zh-CN'`（既定）`| 'en-US' | 'ja-JP'`。ヘッダーでテーマと UI 言語を切り替えられます。`locale` を渡さず `defaultLocale` を使うと、作業台が言語を自己管理します。
 
-公開 API は [docs/api.md](docs/api.md) を参照してください。
+公開 API は [docs/api.ja.md](docs/api.ja.md) を参照してください。
 
 ## ローカル実行
 
