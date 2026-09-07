@@ -8,7 +8,7 @@ Stage characters, props, and cameras in 3D, then export a clean still or a previ
 
 - Package: `@director-stage/core`
 - Component: `<DirectorStage />`
-- License: Apache-2.0
+- License: MIT
 - API: [docs/api.md](docs/api.md)
 
 ## What it does
@@ -105,4 +105,4 @@ npx vercel
 
 ## License
 
-Apache License 2.0
+MIT

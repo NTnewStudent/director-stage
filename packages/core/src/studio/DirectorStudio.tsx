@@ -25,9 +25,9 @@ const NAVIGATION = [
 ] as const
 
 const LOCALES = [
-  { id: 'zh-CN', mark: '中', name: '中文' },
-  { id: 'en-US', mark: 'EN', name: 'English' },
-  { id: 'ja-JP', mark: '日', name: '日本語' },
+  { id: 'zh-CN', mark: 'ZH', name: 'ZH' },
+  { id: 'en-US', mark: 'EN', name: 'EN' },
+  { id: 'ja-JP', mark: 'JP', name: 'JP' },
 ] as const
 
 /** Internal workbench props; persistence always goes through Host. */

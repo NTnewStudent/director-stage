@@ -1,6 +1,6 @@
 # @director-stage/core API
 
-Apache-2.0。公开符号以 `packages/core/src/index.ts` 为准。
+MIT。公开符号以 `packages/core/src/index.ts` 为准。
 
 ## 安装
 

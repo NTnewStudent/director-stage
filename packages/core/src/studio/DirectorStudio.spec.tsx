@@ -305,7 +305,7 @@ describe('director workbench integration', () => {
   })
   it('switches chrome language from the header control', async () => {
     await renderStudio()
-    fireEvent.click(within(screen.getByTestId('director-locale-switch')).getByRole('button', { name: 'English' }))
+    fireEvent.click(within(screen.getByTestId('director-locale-switch')).getByRole('button', { name: 'EN' }))
     await waitFor(() => expect(screen.getByRole('button', { name: 'Characters' })).toBeInTheDocument())
     expect(screen.getByRole('button', { name: 'Copy shot text' })).toBeInTheDocument()
   })
@@ -324,7 +324,7 @@ describe('director workbench integration', () => {
     const onLocaleChange = vi.fn()
     render(<DirectorStage documentKey="demo" host={host} locale="zh-CN" onLocaleChange={onLocaleChange} />)
     await screen.findByTestId('fake-viewport')
-    fireEvent.click(within(screen.getByTestId('director-locale-switch')).getByRole('button', { name: 'English' }))
+    fireEvent.click(within(screen.getByTestId('director-locale-switch')).getByRole('button', { name: 'EN' }))
     expect(onLocaleChange).toHaveBeenCalledWith('en-US')
     expect(screen.getByRole('button', { name: '角色' })).toBeInTheDocument()
   })

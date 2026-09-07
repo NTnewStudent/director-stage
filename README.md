@@ -8,7 +8,7 @@
 
 - 包：`@director-stage/core`
 - 组件：`<DirectorStage />`
-- 协议：Apache-2.0
+- 协议：MIT
 - API：[docs/api.md](docs/api.md)
 
 ## 能做什么
@@ -105,4 +105,4 @@ npx vercel
 
 ## License
 
-Apache License 2.0
+MIT

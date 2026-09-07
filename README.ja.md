@@ -8,7 +8,7 @@ Seedance、H3、Kling、Omni などの映像生成向け **3D 監督台**です�
 
 - パッケージ: `@director-stage/core`
 - コンポーネント: `<DirectorStage />`
-- ライセンス: Apache-2.0
+- ライセンス: MIT
 - API: [docs/api.md](docs/api.md)
 
 ## できること
@@ -105,4 +105,4 @@ npx vercel
 
 ## License
 
-Apache License 2.0
+MIT
